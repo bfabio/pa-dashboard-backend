@@ -1,0 +1,137 @@
+[
+  {
+    "name": "spid-idp-login-layout",
+    "description": "User Interface per Identity Provider SPID",
+    "deployments": null
+  },
+  {
+    "name": "spid-sp-access-button",
+    "description": "Bottone di scelta dell'Identity Provider per l'accesso ai servizi dei Service Provider",
+    "deployments": null
+  },
+  {
+    "name": "spid-graphics",
+    "description": "Icone, loghi e grafiche SPID",
+    "deployments": null
+  },
+  {
+    "name": "design-web-toolkit",
+    "description": "Questa libreria è deprecata, si consiglia l'utilizzo di Bootstrap Italia (https://italia.github.io/bootstrap-italia/)",
+    "deployments": null
+  },
+  {
+    "name": "anpr",
+    "description": "Issue tracker e documentazione di ANPR - Anagrafe Nazionale della Popolazione Residente",
+    "deployments": null
+  },
+  {
+    "name": "developers.italia.it",
+    "description": "La comunità italiana degli sviluppatori di servizi pubblici",
+    "deployments": [ "https://developers.italia.it" ]
+  },
+  {
+    "name": "docs-italia-theme",
+    "description": "Tema per i documenti pubblicati su Docs Italia",
+    "deployments": null,
+  },
+  {
+    "name": "daf-dataportal-backend",
+    "description": "Backend per il nuovo frontend (in sviluppo) di dati.gov.it",
+    "deployments": [ "https://developers.italia.it/it/datigov/" ]
+  },
+  {
+    "name": "spid-regole-tecniche",
+    "description": "Regole tecniche SPID",
+    "deployments": [ "https://docs.italia.it/italia/spid/spid-regole-tecniche/it/stabile/" ]
+  },
+  {
+    "name": "dati.gov.it",
+    "description": "dati.gov.it: il sito degli opendata italiani",
+    "deployments": [ "http://dati.gov.it" ]
+  },
+  {
+    "name": "spid-ansible-shibboleth-example",
+    "description": "Service provider di base con autenticazione SPID",
+    "deployments": null
+  },
+  {
+    "name": "spid-metadata-signer",
+    "description": "Tool per la firma del metadata SAML SPID",
+    "deployments": null
+  },
+  {
+    "name": "cie-middleware",
+    "description": "Middleware della CIE (Carta di identità elettronica)",
+    "deployments": null,
+  },
+  {
+    "name": "linee-guida-cataloghi-dati-dcat-ap-it",
+    "description": "Linee guida per l’alimentazione e gestione di cataloghi dati secondo il profilo nazionale di metadatazione DCAT-AP_IT",
+    "deployments": null
+  },
+  {
+    "name": "anpr-doc-subentro",
+    "description": "ANPR - Documentazione sulle procedure di rettifica delle anomalie per il subentro",
+    "deployments": null
+  },
+  {
+    "name": "daf",
+    "description": "Data & Analytics Framework (DAF)",
+    "deployments": null
+  },
+  {
+    "name": "cie-ideaapp",
+    "description": "App IDEA per Android che consente la lettura dati documento ICAO",
+    "deployments": null
+  },
+  {
+    "name": "pianotriennale-ict-doc",
+    "description": "Documento Piano Triennale ICT",
+    "deployments": [ "https://docs.italia.it/italia/piano-triennale-ict/pianotriennale-ict-doc/" ]
+  },
+  {
+    "name": "pianotriennale-ict.italia.it",
+    "description": "Sito Piano Triennale ICT",
+    "deployments": [ "https://pianotriennale-ict.italia.it" ]
+  },
+  {
+    "name": "spid-metadata-builder",
+    "description": "Generatore metadata SPID per Service Provider",
+    "deployments": null
+  },
+  {
+    "name": "designers.italia.it",
+    "description": "La comunità italiana dei designer di servizi pubblici",
+    "deployments": [ "https://designers.italia.it" ]
+  },
+  {
+    "name": "design-ui-kit",
+    "description": "Official UI components and templates for the Italia design system",
+    "deployments": null
+  },
+  {
+    "name": "design-icon-kit",
+    "description": "Official icon set for the Italia design system",
+    "deployments": null
+  },
+  {
+    "name": "spid-wordpress",
+    "description": "SPID Wordpress plugin (based on SimpleSAMLphp)",
+    "deployments": null
+  },
+  {
+    "name": "moduli-pa",
+    "description": null,
+    "deployments": null
+  },
+  {
+    "name": "pianotri-elencobasidatichiave",
+    "description": "Piano Triennale: Elenco Basi Dati Chiave",
+    "deployments": [ "http://elenco-basi-di-dati-chiave.readthedocs.io/it/latest/" ]
+  },
+  {
+    "name": "spid-smart-button",
+    "description": "Nuovo pulsante login per SPID basato su finestra modale JavaScript (in sviluppo)",
+    "deployments": null
+  }
+]
