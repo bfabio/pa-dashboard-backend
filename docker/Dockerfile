@@ -3,6 +3,8 @@ ARG user=pa-dashboard
 # Build stage
 FROM debian:buster as build
 
+ARG user
+
 ENV RAILS_ENV production
 ENV DATABASE_URL postgresql://user:pass@127.0.0.1/dbname
 
@@ -25,6 +27,8 @@ COPY --chown=$user:$user . ./
 
 # Final stage
 FROM ruby:2.5-buster
+
+ARG user
 
 ENV RAILS_ENV production
 
