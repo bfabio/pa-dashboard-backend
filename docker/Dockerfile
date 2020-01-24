@@ -37,7 +37,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN adduser --system --group $user \
   \
-  && mkdir -p /app/vendor/bundle
+  && mkdir -p /app/vendor/bundle \
   && chown -R $user:$user /app
 
 WORKDIR /app
