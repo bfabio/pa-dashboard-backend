@@ -11,6 +11,18 @@ ENV DATABASE_URL postgresql://user:pass@127.0.0.1/dbname
 # https://github.com/hadolint/hadolint/wiki/DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+RUN apt-get update \
+    && apt-get install -y ruby-bundler \
+        build-essential \
+        # Nokogiri
+        libxml2-dev \
+        ruby-dev \
+        libpq-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get -y install zlib1g-dev
+
 RUN adduser --system --group $user
 
 RUN install --directory --owner $user --group $user /app
