@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: "bfabio/pa-dashboard:${TAG:-latest}"
+    image: "bfabio/pa-dashboard-backend:${TAG:-latest}"
     build:
       context: ..
       dockerfile: docker/Dockerfile

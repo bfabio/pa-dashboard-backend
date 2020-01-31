@@ -1,7 +1,7 @@
 ARG user=pa-dashboard
 
 # Build stage
-FROM debian:buster as build
+FROM ruby:2.5-buster as build
 
 ARG user
 
@@ -14,6 +14,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN adduser --system --group $user
 
 RUN install --directory --owner $user --group $user /app
+
 WORKDIR /app
 
 USER $user
@@ -39,6 +40,8 @@ RUN adduser --system --group $user \
   \
   && mkdir -p /app/vendor/bundle \
   && chown -R $user:$user /app
+
+RUN ln -s /usr/local/bin/ruby /usr/local/bin/ruby2.5
 
 WORKDIR /app
 
