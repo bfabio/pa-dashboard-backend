@@ -1,12 +1,15 @@
 version: '3'
 services:
-  app:
-    deploy:
-      replicas: 2
-    env_file: env.production
+    app:
+        deploy:
+            replicas: 2
+        env_file: env.production
 
-  web:
-    environment:
-      SERVER_NAME: 'dashboard.zland.org'
-    ports:
-      - '80:80'
+    db:
+        env_file: env.production
+
+    # web:
+    #     environment:
+    #         SERVER_NAME: 'dashboard.zland.org'
+    #     ports:
+    #         - '80:80'
