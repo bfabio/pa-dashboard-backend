@@ -1,0 +1,13 @@
+https://pa-dashboard-backend.zland.org {
+    proxy / http://app:3000 {
+        transparent
+        websocket
+    }
+    # errors stdout
+    header / {
+        Strict-Transport-Security "max-age=31536000"
+    }
+    # log / stdout "{combined} cache={cache_status}"
+    gzip
+    tls fb@fabiobonelli.it
+}
