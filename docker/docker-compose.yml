@@ -5,6 +5,8 @@ services:
         build:
             context: ..
             dockerfile: docker/Dockerfile
+        depends_on:
+            - db
         ports:
             - '3000:3000'
         restart: unless-stopped
