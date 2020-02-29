@@ -1,0 +1,11 @@
+global_token:
+    hostname: "*"
+    token: "3xbDjU7wu6EQja9jBEX5XUfa"
+
+docs_italia_it:
+    hostname: "docs.italia.it"
+    token: "44Y4S1zK1YBVRKM71aQmgJLL"
+
+designers_italia_it:
+    hostname: "designers.italia.it"
+    token: "t5F1X6CCi2xxt3NzwHoju4sk"

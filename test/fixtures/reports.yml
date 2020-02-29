@@ -1,0 +1,7 @@
+key-one:
+    key: 'key-1'
+    date: "<%= Time.now %>"
+    hostname: "docs.italia.it"
+    description: 'Report'
+    category: 0
+    severity: 0
