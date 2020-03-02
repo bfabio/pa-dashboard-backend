@@ -1,13 +1,19 @@
+# Used by DockerHub automated testing
+# https://docs.docker.com/docker-hub/builds/automated-testing/
+
 version: '3'
 services:
-  app:
-    env_file: env.test
-    environment:
-      RAILS_ENV: test
-    depends_on:
-      - postgres
+    sut:
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile
+        env_file: env.test
+        environment:
+            RAILS_ENV: test
+        command: bin/rails test
+        depends_on:
+            - db
 
-  postgres:
-    image: 'postgres:11'
-    env_file: env.test
-    restart: unless-stopped
+    db:
+        image: 'postgres:12'
+        env_file: env.test
