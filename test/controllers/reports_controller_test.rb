@@ -162,6 +162,19 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
     assert_equal({ 'error' => 'Report not found' }, response.parsed_body)
   end
 
+  test "should not destroy a report with invalid token" do
+    assert_no_changes('Report.count') do
+      delete(
+        report_url('docs.italia.it', 'key-1'),
+        headers: { 'Authorization' => authorization('no-such-token') },
+        as: :json
+      )
+    end
+
+    assert_response 401
+    assert_equal("HTTP Token: Access denied.\n", response.body)
+  end
+
   private
     def authorization(token)
       ActionController::HttpAuthentication::Token.encode_credentials(token)

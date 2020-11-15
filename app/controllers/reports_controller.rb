@@ -5,8 +5,8 @@ class ReportsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid,
               ActionController::ParameterMissing, with: :invalid
 
-  before_action :set_host, only: :update
-  before_action :authenticate, only: :update
+  before_action :set_host, except: :index
+  before_action :authenticate, except: :index
 
   # GET /reports
   def index
@@ -17,7 +17,7 @@ class ReportsController < ApplicationController
 
   # PATCH/PUT /reports/:hostname/:key
   def update
-    @report = Report.find_by(key: params[:key])
+    @report = Report.find_by(key: params[:key], hostname: @hostname)
 
     if @report
       @report.update!(report_params)
@@ -33,7 +33,7 @@ class ReportsController < ApplicationController
 
   # DELETE /reports/:hostname/:key
   def destroy
-    Report.find_by!(key: params[:key]).destroy
+    Report.find_by!(key: params[:key], hostname: @hostname).destroy
   end
 
   private
@@ -42,7 +42,7 @@ class ReportsController < ApplicationController
     end
 
     def report_params
-      params.require(:report).permit(:date, :description, :doc_url, :category, :severity)
+      params.require(:report).permit(:key, :date, :description, :doc_url, :category, :severity)
     end
 
     def not_found
