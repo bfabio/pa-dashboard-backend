@@ -1,5 +1,6 @@
 class Report < ApplicationRecord
-  validates :key, presence: true
+  validates :key, presence: true,
+                  uniqueness: { scope: :hostname }
   validates :date, presence: true
   validates :hostname, presence: true
   validates :description, presence: true
