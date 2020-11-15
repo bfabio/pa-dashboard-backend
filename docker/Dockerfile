@@ -20,7 +20,7 @@ USER pa-dashboard
 # Run bundle install before copying the whole application to take advantage
 # of Docker's caching.
 COPY Gemfile Gemfile.lock ./
-RUN bundle install --without development --deployment --jobs 20 --retry 5 --no-cache
+RUN bundle install --jobs 20 --retry 5 --no-cache
 
 COPY --chown=pa-dashboard:pa-dashboard . ./
 
@@ -49,8 +49,7 @@ WORKDIR /app
 
 COPY --chown=pa-dashboard:pa-dashboard . ./
 
-COPY --from=build --chown=pa-dashboard:pa-dashboard /app/vendor/bundle ./vendor/bundle
-COPY --from=build --chown=pa-dashboard:pa-dashboard /usr/local/bundle/config /usr/local/bundle/config
+COPY --from=build --chown=pa-dashboard:pa-dashboard /usr/local/bundle /usr/local/bundle
 
 COPY docker/entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
@@ -58,6 +57,6 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 USER pa-dashboard
 
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["bin/rails", "server"]
+CMD ["bin/rails", "server", "--binding", "0.0.0.0"]
 
 EXPOSE 3000
