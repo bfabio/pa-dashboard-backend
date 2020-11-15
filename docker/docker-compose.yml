@@ -5,6 +5,9 @@ services:
         build:
             context: ..
             dockerfile: docker/Dockerfile
+        environment:
+            BUNDLE_WITHOUT: 'development test'
+            BUNDLE_DEPLOYMENT: "true"
         depends_on:
             - db
         ports:
