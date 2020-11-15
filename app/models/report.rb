@@ -8,5 +8,5 @@ class Report < ApplicationRecord
   validates :severity, presence: true
 
   enum category: %i(security ux links best_practice)
-  enum severity: %i(info low normal high)
+  enum severity: %i(info ok low medium high)
 end

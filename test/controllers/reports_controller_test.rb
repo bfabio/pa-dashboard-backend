@@ -9,7 +9,7 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
       date: Time.now,
       description: 'New report',
       category: :security,
-      severity: :normal,
+      severity: :ok,
     }
   end
 
